@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}
-{% block head %}{{ posts.location }}. {{ posts.date}}{% endblock %}
-{% endblock %}
+{% block title %}{% endblock %}
+{% block head %}{{ post.location }}. {{ post.date}}{% endblock %}
 {% block content %}
 <div class="row mt-3">
 <div class="col-12 col-md-6">
     <ul>
-    <li>Место: {{ posts.location }}</li>
-    <li>Дата: {{ posts.date }}</li>
-    <li>Категория: {{ posts.category }}</li>
+    <li>Место: {{ post.location }}</li>
+    <li>Дата: {{ post.date }}</li>
+    <li>Категория: {{ post.category }}</li>
     </ul>
-    <p>{{ posts.text }}</p>      
+    <p>{{ post.text }}</p>      
 </div> 
 </div>
 {% endblock %}

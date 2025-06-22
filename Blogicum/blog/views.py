@@ -43,6 +43,7 @@ posts = [
                 укутывал их, чтобы не испортились от дождя.''',
     },
 ]
+posts_id = {i['id']: i for i in posts}
 
 
 def index(request):
@@ -53,7 +54,11 @@ def index(request):
 
 def post_detail(request, id):
     template_name = 'blog/detail.html'
-    context = {'post': posts[id]}
+    if id in posts_id.keys():
+        context = {'post': posts_id[id]}
+    else:
+        raise IndexError('Поста с запрашиваемым номером не существует:/')
+        context = {'post': {}}
     return render(request, template_name, context)
 
 
