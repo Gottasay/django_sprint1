@@ -1,5 +1,5 @@
 """
-WSGI config for Blogicum project.
+WSGI config for blogicum project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
